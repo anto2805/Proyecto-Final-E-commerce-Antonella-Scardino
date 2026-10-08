@@ -1,0 +1,555 @@
+.top-bar-carousel {
+    background-color: black;
+    color: white;
+}
+/* ==========================================
+   0. MEDIA QUERIES (Responsividad Global)
+   ========================================== */
+
+/* Para Tablets y pantallas medianas (768px o menos) */
+@media (max-width: 768px) {
+    /* 1. Definimos la estructura general del header una sola vez */
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 15px 10px;
+    }
+
+    /* 2. Agrupamos los elementos y les asignamos su orden y estilo en celular */
+    .header-logo, 
+    .logo-container {
+        order: 1;
+        text-align: center;
+        margin: 0 auto;
+        border-radius: 8px;
+    }
+
+    .header-search {
+        order: 2;
+        position: relative;
+        width: 90%;
+        max-width: 300px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .header-top-right {
+        order: 3;
+        position: static;
+        margin: 0 auto;
+        justify-content: center;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }
+
+    .nav-menu {
+        order: 4;
+        width: 100%;
+    }
+
+    .nav-menu ul {
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+        padding: 5px 0;
+    }
+
+    /* 3. Resto de las secciones de la página */
+    .carrusel-btn {
+        display: none;
+    }
+
+    .catalogo {
+        padding: 20px 10px;
+    }
+    
+    .catalogo-scroll-container {
+        gap: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .card-categoria {
+        flex: 0 0 260px;
+        height: 350px;
+    }
+    
+    .catalogo h1 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+}
+
+/* Para Celulares pequeños (480px o menos) */
+@media (max-width: 480px) {
+    .logo-container img {
+        max-width: 90px;
+    }
+    .slogan {
+        font-size: 0.75rem;
+    }
+    .card-categoria {
+        flex: 0 0 280px; /* Tarjetas más chicas en móviles */
+        height: 380px;
+    }
+}
+
+
+/* ==========================================
+   1. ESTILOS GENERALES Y BASE
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #faf9f6;
+    color: #333;
+}
+
+/* --- Barra de anuncios --- */
+.top-bar-carousel {
+    background-color: #2c2c2c;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 6px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.carousel-track {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollText 25s linear infinite;
+}
+
+.carousel-track span {
+    display: inline-block;
+    padding-right: 60px;
+}
+
+@keyframes scrollText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* --- Header / Navegación --- */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    padding-top: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-search {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 4px 10px;
+    background-color: #faf9f6;
+    width: 200px;
+}
+
+.header-search input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+.header-search button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.header-top-right {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.header-top-right a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.header-top-right a:hover {
+    color: #b08d57;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.logo-container img {
+    max-width: 110px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.slogan {
+    font-size: 0.8rem;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+.nav-menu {
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #f0f0f0;
+}
+
+.nav-menu ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    padding: 12px 0;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-menu ul li a:hover {
+    color: #b08d57;
+}
+
+
+/* ==========================================
+   2. SECCIÓN PRINCIPAL / CARRUSEL
+   ========================================== */
+.catalogo {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.catalogo h1 {
+    font-size: 1.6rem;
+    color: #2c2c2c;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.carrusel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 1050px; /* Limita el ancho para que las flechas queden alineadas */
+    margin: 0 auto;
+}
+
+.catalogo-scroll-container {
+    display: flex;
+    flex-wrap: nowrap; /* Obliga a que vayan en una sola línea horizontal */
+    gap: 25px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 15px;
+    width: 100%;
+    scrollbar-width: none;
+}
+
+.catalogo-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Tarjetas individuales tipo Banner */
+.card-categoria {
+    flex: 0 0 280px; /* Ancho fijo para que no se estiren de más */
+    height: 390px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    scroll-snap-align: start;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
+    background-color: #fff;
+}
+
+.card-categoria:hover {
+    transform: translateY(-5px);
+}
+
+.card-categoria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.85);
+    transition: filter 0.3s, transform 0.5s;
+}
+
+.card-categoria:hover img {
+    transform: scale(1.04);
+    filter: brightness(0.75);
+}
+
+.overlay-categoria {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 22px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.promo-tag {
+    background-color: #b08d57;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    width: fit-content;
+    text-transform: uppercase;
+}
+
+.card-categoria h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.card-categoria p {
+    font-size: 0.85rem;
+    color: #ddd;
+}
+
+.btn-explorar {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 4px;
+    transition: color 0.2s;
+}
+
+.btn-explorar:hover {
+    color: #b08d57;
+}
+
+/* --- Botones de Flechas (Extremos) --- */
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.carrusel-btn:hover {
+    background: #2c2c2c;
+    border-color: #2c2c2c;
+}
+
+.carrusel-btn:hover .material-symbols-outlined {
+    color: #ffffff;
+}
+
+.carrusel-btn .material-symbols-outlined {
+    font-size: 20px;
+    color: #333333;
+    transition: color 0.3s ease;
+}
+
+/* Ubicación en los extremos de afuera del carrusel */
+.btn-prev {
+    left: 15px;
+}
+
+.btn-next {
+    right: 15px;
+}
+
+/* ==========================================
+   3. SECCIÓN DE CONTACTO
+   ========================================== */
+.seccion-contacto {
+    background-color: #ffffff;
+    padding: 70px 20px;
+    margin-top: 60px;
+    border-top: 1px solid #eaeaea;
+}
+
+.contacto-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.seccion-contacto h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #2c2c2c;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.form-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.grupo-input label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.grupo-input input, 
+.grupo-input select, 
+.grupo-input textarea {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #faf9f6; /* Tono crema sutil acorde a tu paleta */
+    font-size: 0.9rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.grupo-input input:focus, 
+.grupo-input select:focus, 
+.grupo-input textarea:focus {
+    border-color: #b08d57; /* Color tierra/dorado de la marca al hacer foco */
+    background-color: #fff;
+}
+
+.btn-enviar {
+    background-color: #2c2c2c;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.btn-enviar:hover {
+    background-color: #535353;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   4. FOOTER
+   ========================================== */
+.site-footer {
+    background-color: #1a1a1a;
+    color: #bbb;
+    padding: 50px 20px 20px 20px;
+    margin-top: 60px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #333;
+}
+
+.footer-col h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.footer-col h4 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.footer-col p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+    color: #b08d57;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.75rem;
+    color: #888;
+}

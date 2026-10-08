@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Nido & Co: Tu espacio, tu esencia</title>
+</head>
+<body>
+    <!--BARRA DE ANUNCIOS-->
+    <div class = "top-bar-carousel">
+        <div class = "carousel-track">
+            <span>🚚 Envíos gratis a partir de $100.000 a todo el país</span>
+            <span>💳 3 cuotas sin interés en todos los productos</span>
+            <span>💵 15% OFF pagando en efectivo / cash</span>
+            <span>✨ 📱 30% reintegro con Modo QR Galicia (Desde $20.000 SOLO EN TIENDA ONLINE)</span>
+        </div>
+    </div>
+
+    <!--ENCABEZADO-->
+    <header class = "header">
+        <!--BUSCADOR (PARTE SUPERIOR IZQUIERDA)-->
+        <div class="header-search">
+            <input type="text" placeholder="Buscar productos...">
+            <button type="submit">🔍</button>
+        </div>
+        <!--CONTACTO Y CARRITO HEADER (PARTE SUPERIOR DERECHA)-->
+       <div class = "header-top-right">
+            <a href="">Contacto</a>
+            <a href=""><span class="material-symbols-outlined">shopping_cart</span></a>
+       </div>
+
+       <!--LOGO-->
+       <div class = "logo-container">
+            <img src="img/nido-co-logo.jpg" alt="Nido & Co Logo">
+            <p class = "slogan">Tu espacio, tu esencia</p>
+       </div>
+       <!--BARRA DE NAVEGACION INFERIOR-->
+       <nav class="nav-menu">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Habitación</a></li>
+                <li><a href="#">Decoración</a></li>
+                <li><a href="#">Cocina</a></li>
+                <li><a href="#">Perfumes y Difusores</a></li>
+                <li><a href="#">Accesorios y Bijouteria</a></li>
+            </ul>
+        </nav>
+    </header>
+
+ <!-- Secciones Visuales Desplazables -->
+    <main class="catalogo">
+        <h1>✨ Haz de tu hogar un nuevo espacio</h1>
+    
+        <!-- El wrapper envuelve al scroll y a los botones para posicionarlos -->
+        <div class="carrusel-wrapper">
+            <!-- BOTÓN IZQUIERDO -->
+            <button class="carrusel-btn btn-prev" aria-label="Anterior">
+                <span class="material-symbols-outlined">arrow_back_ios</span>
+            </button>
+
+            <!-- Contenedor Scroll con las 5 tarjetas -->
+            <div class="catalogo-scroll-container">
+                <!-- Tarjeta Categoría 1: Cocina -->
+                <article class="card-categoria">
+                    <img src="img/porta-utensilios-bambú.jpg" alt="Cocina y Mesa">
+                    <div class="overlay-categoria">
+                        <span class="promo-tag">¡15% OFF en efectivo!</span>
+                        <h3>Cocina & Mesa</h3>
+                        <p>Vajilla artesanal y utensilios</p>
+                        <a href="#" class="btn-explorar">Ver Colección →</a>
+                    </div>
+                </article>
+                
+                <!-- Tarjeta Categoría 2: Habitación -->
+                <article class="card-categoria">
+                    <img src="img/kit-5-piezas-king-size-beige.jpg" alt="Habitación">
+                    <div class="overlay-categoria">
+                        <span class="promo-tag">3 Cuotas sin interés</span>
+                        <h3>Habitación</h3>
+                        <p>Textiles y confort para tu descanso</p>
+                        <a href="#" class="btn-explorar">Ver Colección →</a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta Categoría 3: Decoración -->
+                <article class="card-categoria">
+                    <img src="img/lampara-mesa-noche.jpg" alt="Decoración">
+                    <div class="overlay-categoria">
+                        <span class="promo-tag">Novedades</span>
+                        <h3>Decoración</h3>
+                        <p>Iluminación y detalles con alma</p>
+                        <a href="#" class="btn-explorar">Ver Colección →</a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta Categoría 4: Perfumes y Difusores -->
+                <article class="card-categoria">
+                    <img src="img/perfume-home-jazmin-difusor.jpg" alt="Perfumes y Difusores">
+                    <div class="overlay-categoria">
+                        <span class="promo-tag">30% OFF</span>
+                        <h3>Perfumes y Difusores</h3>
+                        <p>Viste tus espacios con aromas inolvidables</p>
+                        <a href="#" class="btn-explorar">Ver Colección →</a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta Categoría 5: Accesorios -->
+                <article class="card-categoria">
+                    <img src="img/llaverito-infantil.jpg" alt="Accesorios">
+                    <div class="overlay-categoria">
+                        <span class="promo-tag">Personaliza tus accesorios</span>
+                        <h3>Accesorios y Bijouteria</h3>
+                        <p>Piezas únicas para llevar con vos o regalar</p>
+                        <a href="#" class="btn-explorar">Ver Colección →</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- BOTÓN DERECHO -->
+            <button class="carrusel-btn btn-next" aria-label="Siguiente">
+                <span class="material-symbols-outlined">arrow_forward_ios</span>
+            </button>
+        </div>
+    </main>
+
+    <!--SECCION DE CONTACTO Y CONSULTAS-->
+    <section class="seccion-contacto" id="contacto">
+        <div class="contacto-container">
+            <h2>Hablemos de tu Espacio</h2>
+            <p class="subtitulo">¿Tienes dudas sobre un producto o quieres un pedido especial? Escríbenos.</p>
+        </div>
+        <!--FORMULARIO-->
+        <form class="form-contacto" action="https://formspree.io/f/mzedevlv" method="POST">
+            
+            <div class="grupo-input">
+                <label for="nombre">Nombre y Apellido</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej. Lucía Gómez" required>
+            </div>
+
+            <div class="grupo-input">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+            </div>
+
+            <div class="grupo-input">
+                <label for="tipo-consulta">Motivo de contacto</label>
+                <select id="tipo-consulta" name="motivo">
+                    <option value="consulta">Consulta sobre producto</option>
+                    <option value="pedido">Pedido personalizado / Mayorista</option>
+                    <option value="envios">Estado de envío</option>
+                </select>
+            </div>
+
+            <div class="grupo-input">
+                <label for="mensaje">Mensaje / Detalle del pedido</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos qué estás buscando..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+        </form>
+    
+    </section>
+
+    <!-- FOOTER DE LA TIENDA -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>Nido & Co.</h3>
+            <p>Diseño y calidez para transformar cada rincón de tu hogar en un espacio único.</p>
+        </div>
+        
+        <div class="footer-col">
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#catalogoScroll">Cocina & Mesa</a></li>
+                <li><a href="#catalogoScroll">Habitación</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>Contacto</h4>
+            <p>Buenos Aires, Argentina</p>
+            <p>hola@nidoystore.com</p>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2026 Nido & Co. Todos los derechos reservados.</p>
+    </div>
+</footer>
+</body>
+</html>
