@@ -1,3 +1,4 @@
+PROYECTO FINAL E-COMMERCE ANTONELLA SCARDINO
 Nido & Co. 🌿
 
 Sitio web e-commerce de diseño, decoración y calidez para el hogar, desarrollado con un enfoque minimalista y estética boutique.
